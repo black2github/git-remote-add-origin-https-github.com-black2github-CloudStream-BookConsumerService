@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: store-book-service
+  cloud:
+    stream:
+      kafka:
+        binder:
+          auto-add-partitions: true
+      bindings:
+        input:
+          destination: storeBookServiceDestination
+          group: storeBookServiceGroup
+          binder: kafka
+
+server:
+  port: 8052
